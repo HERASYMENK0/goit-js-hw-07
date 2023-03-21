@@ -5,7 +5,7 @@ const imgBox = document.querySelector(".gallery");
 const imgMarkup = creatImagesCard(galleryItems);
 
 imgBox.insertAdjacentHTML("beforeend", imgMarkup);
-imgBox.addEventListener("click", clickImgCard, { passive: false });
+
 
 function creatImagesCard(element) {
   return element
@@ -18,11 +18,7 @@ function creatImagesCard(element) {
     })
     .join(" ");
 }
-function clickImgCard(evt) {
-  evt.preventDefault();
-  if (!evt.target.classList.contains("gallery__image")) {
-    return;
-  }
+
    
 
   const lightbox = new SimpleLightbox(".gallery a", {
@@ -32,5 +28,5 @@ function clickImgCard(evt) {
     captionDelay: 250,
     docClose: true,
   });
-}
+
 
